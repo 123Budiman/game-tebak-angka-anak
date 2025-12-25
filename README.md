@@ -1,2 +1,2 @@
-# game-tebak-angka-anak
+index.html
 game tebak angka
