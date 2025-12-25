@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Game Anak</title>
+</head>
+
+<body style="text-align:center; font-size:30px;">
+
+<h1>🎮 Tebak Angka</h1>
+<h2 id="soal"></h2>
+
+<input id="jawaban" type="number" style="font-size:30px;">
+<br><br>
+<button onclick="cek()">JAWAB</button>
+
+<h3 id="info"></h3>
+<h3>❤️ HATI: <span id="nyawa">3</span></h3>
+
+<script>
+let nyawa = 3;
+let a, b, hasil;
+
+function soalBaru() {
+  a = Math.floor(Math.random()*5)+1;
+  b = Math.floor(Math.random()*5)+1;
+  hasil = a + b;
+  soal.innerHTML = a + " + " + b;
+}
+
+function cek() {
+  let isi = jawaban.value;
+  if (isi == hasil) {
+    info.innerHTML = "BENAR 😊";
+    soalBaru();
+  } else {
+    nyawa--;
+    nyawaText.innerHTML = nyawa;
+    info.innerHTML = "SALAH 😢";
+    if (nyawa == 0) {
+      alert("GAME OVER");
+      location.reload();
+    }
+  }
+  jawaban.value = "";
+}
+
+let soal = document.getElementById("soal");
+let info = document.getElementById("info");
+let nyawaText = document.getElementById("nyawa");
+
+soalBaru();
+</script>
+
+</body>
+</html>
