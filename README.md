@@ -1,2 +1,2 @@
 index.html
-game tebak angka
+game tebak angka index.html
